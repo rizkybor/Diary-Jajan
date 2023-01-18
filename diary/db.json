@@ -29,6 +29,18 @@
             "tanggal":"16 Februari 2021",
             "nama":"Otak-otak",
             "pengeluaraan":11971
+        },
+        {
+            "jam": "05:45",
+            "tanggal":"11 Februari 2021",
+            "nama":"Sayur Bening",
+            "pengeluaraan":79852
+        },
+        {
+            "jam": "05:45",
+            "tanggal":"11 Februari 2021",
+            "nama":"Sayur Lodeh",
+            "pengeluaraan":62879
         }
     ]
 }
