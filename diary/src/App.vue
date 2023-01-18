@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="KITA LANJUT LAGI BESOK ! BISMILLAH"/>
+<CardDiary msg="TODOS"></CardDiary>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import CardDiary from './components/CardDiary.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CardDiary
   }
 }
 </script>
