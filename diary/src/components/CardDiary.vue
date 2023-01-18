@@ -12,7 +12,7 @@
 <script>
 import axios from "axios"
 export default {
-    name: 'DiaryJajanCardDiary',
+    name: 'CardDiary',
     props: {
         msg: String
     },
@@ -24,9 +24,10 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get(`http://localhost:3001/todos`);
+      const res = await axios.get(`http://localhost:3000/items`);
 
       this.todos = res.data;
+      console.log(this.todos,'<< ')
     } catch (e) {
       console.error(e);
     }

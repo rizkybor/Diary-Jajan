@@ -1,16 +1,13 @@
 <template>
-<CardDiary msg="TODOS"></CardDiary>
+  <div id="container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 
-import CardDiary from './components/CardDiary.vue';
-
 export default {
-  name: 'App',
-  components: {
-    CardDiary
-  }
+  name: 'App'
 }
 </script>
 
