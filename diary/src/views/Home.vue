@@ -7,7 +7,7 @@
 <!-- button modal -->
       <button type="button" @click="openModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddItem" >Add Item</button>
 <!-- modal -->
-      <div v-if="showModal" class="modal fade" id="modalAddItem" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div v-show="showModal" class="modal fade" id="modalAddItem" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -29,7 +29,7 @@
         </div>
             <div class="modal-footer">
               <button type="button" @click="closeModal" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="button" @click="submitForm" class="btn btn-primary">Kirim</button>
+              <button type="button" @click="submitForm" class="btn btn-primary" data-bs-dismiss="modal">Kirim</button>
             </div>
           </div>
         </div>
@@ -94,10 +94,10 @@ export default {
     closeModal() {
       this.showModal = false
     },
-    submitForm() {
-      console.log('haha')
+    async submitForm() {
+      let newData = this.formData
+      this.$store.dispatch('addData', newData)
       this.closeModal = false
-      // this.$store.dispatch('addData', this.formData)
     }
   },
 };
