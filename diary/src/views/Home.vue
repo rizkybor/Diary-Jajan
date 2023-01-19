@@ -34,9 +34,6 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
     <div class="container">
       <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-2">
@@ -47,10 +44,9 @@
 </template>
 
 <script>
-import axios from 'axios';
-import CardDiary from "@/components/CardDiary.vue";
-import { mapState, mapGetters } from 'vuex';
 
+import CardDiary from "@/components/CardDiary.vue";
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   name: "DiaryJajanHome",
@@ -59,7 +55,8 @@ export default {
   },
   computed: {
     ...mapState(['dataListing']),
-    ...mapGetters(['currentSubtotal'])
+    ...mapGetters(['currentSubtotal']),
+    ...mapActions(['getData']),
   },
   data(){
     return{
@@ -73,12 +70,7 @@ export default {
     }
   },
   async created() {
-    try {
-      const res = await axios.get(`http://localhost:3000/items`)
-      this.$store.dispatch('getData', res.data)
-    } catch(e) {
-      console.error(e.error)
-    }
+    await this.getData
   },
   mounted(){
     var splitDate = this.formData.tanggal.split("/");
