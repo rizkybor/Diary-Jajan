@@ -2,7 +2,7 @@
   <div>
     <div class="col">
       <div class="p-0">
-        <div class="card" style="width: 20rem">
+        <div class="card" style="width: 16rem">
           <div class="card-body">
             <Items :ListItem="CardList"></Items>
           </div>
