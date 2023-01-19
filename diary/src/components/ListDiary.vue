@@ -1,7 +1,7 @@
 <template>
   <div>
     <h5 class="card-title">
-      <strong>{{ ListItem[0].tanggal.substring(0, 12) }}</strong>
+      <strong>{{ ListItem[0].tanggal.substring(0, 11) }}</strong>
     </h5>
     <listing v-for="(item, index) in ListItem" :list="item" :key="index" />
     <p class="text-end"><strong>Rp. {{handleData(ListItem)}} </strong></p>
