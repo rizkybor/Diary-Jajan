@@ -20,7 +20,10 @@ export default {
     Items
   },
   mounted(){
-    
+  
+  },
+  methods:{
+  
   }
 };
 </script>

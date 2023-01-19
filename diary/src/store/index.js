@@ -2,14 +2,19 @@ import { createStore } from "vuex";
 
 const store = createStore({
     state:{
-        dataListing: []
+        dataListing: [],
+        subTotal: 0
     },
     getters:{
         currentListing: (state) => state.dataListing,
+        currentSubtotal: (state) => state.subTotal
     },
     mutations:{
         SET_DATA(state, payload){
             state.dataListing = payload
+        },
+        SET_SUBTOTAL(state, payload){
+            state.subTotal = payload
         }
     },
     actions:{
@@ -20,6 +25,10 @@ const store = createStore({
             return r;
            }, Object.create(null))
            store.commit("SET_DATA", result)
+        },
+        async getCalc(commit, payload){
+           store.commit("SET_SUBTOTAL", payload)
+            
         }
     }
 })
