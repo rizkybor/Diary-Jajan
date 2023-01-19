@@ -1,16 +1,13 @@
 <template>
-<CardDiary msg="TODOS"></CardDiary>
+  <div id="container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 
-import CardDiary from './components/CardDiary.vue';
-
 export default {
-  name: 'App',
-  components: {
-    CardDiary
-  }
+  name: 'App'
 }
 </script>
 
@@ -19,8 +16,11 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
+  padding-left: 250px;
+  padding-right: 250px
+
 }
 </style>

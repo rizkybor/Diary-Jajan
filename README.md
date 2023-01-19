@@ -1,2 +1,2 @@
 # Diary-Jajan
-WebApps ini dibangun untuk Uji FE menggunakan tech VueJS, Vue Bootstrap, State Management dengan Vuex, dan json-server
+WebApps ini dibangun untuk Uji FE menggunakan tech VueJS, Bootstrap 5, State Management dengan Vuex, dan json-server
