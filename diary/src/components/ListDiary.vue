@@ -4,7 +4,7 @@
       <strong>{{ ListItem[0].tanggal.substring(0, 11) }}</strong>
     </h5>
     <listing v-for="(item, index) in ListItem" :list="item" :key="index" />
-    <p class="text-end"><strong>Rp. {{handleData(ListItem)}} </strong></p>
+    <p class="text-end"><strong>{{handleData(ListItem).toLocaleString('id-ID', { style: 'currency', currency: 'IDR' }).split(',')[0]}} </strong></p>
   </div>
 </template>
 
