@@ -18,12 +18,7 @@ const store = createStore({
       state.subTotal = payload;
     },
     ADD_DATA(state, payload) {
-      let data = state.dataListing;
-      let newData = payload;
-      let key = newData.tanggal;
-      var newArray = data[key] ? [...data[key], newData] : [newData];
-      Object.assign(data, { [key]: newArray });
-      state.dataListing = data;
+      state.dataListing = payload;
     },
   },
   actions: {
@@ -46,8 +41,16 @@ const store = createStore({
     async getCalc(commit, payload) {
       store.commit("SET_SUBTOTAL", payload);
     },
-    addData({ commit }, payload) {
-      commit("ADD_DATA", payload);
+    async addData({ commit }, payload) {
+      payload.id = Date.now();
+      axios
+        .post("http://localhost:3000/items", payload)
+        .then((response) => {
+          commit("ADD_DATA", response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 });

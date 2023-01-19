@@ -73,6 +73,7 @@ export default {
     await this.getData
   },
   mounted(){
+    this.getData
     var splitDate = this.formData.tanggal.split("/");
     var newDate = splitDate[1] + "/" + splitDate[0] + "/" + splitDate[2];
     var convertedDate = new Date(newDate);
