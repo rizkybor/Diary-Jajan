@@ -2,7 +2,7 @@
   <div>
     <div class="text-center mb-5">
       <h1>Diari Jajan Februari 2021</h1>
-      <h3>Pengeluaran Bulan Ini Rp. {{ currentSubtotal }}</h3>
+      <h3>Pengeluaran Bulan Ini {{ currentSubtotal.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' }).split(',')[0] }}</h3>
 
 <!-- button modal -->
       <button type="button" @click="openModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAddItem" >Add Item</button>
